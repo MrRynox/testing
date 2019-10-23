@@ -1,12 +1,9 @@
 pipeline {
-    agent {
-        dockerfile true 
-    }
+    agent { docker { image 'python:3.5.1' } }
     stages {
-        stage('Test') {
+        stage('build') {
             steps {
-                echo 'Hallo, das ist ein Test'
-                sh 'echo myCustomEnvVar = $myCustomEnvVar'
+                sh 'python --version'
             }
         }
     }
