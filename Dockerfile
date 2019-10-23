@@ -1,8 +1,5 @@
-FROM python:3.5
+FROM ubuntu
 
-VOLUME ["/code"]
-ADD . /code
-WORKDIR /code
-
-EXPOSE 8000
-CMD ["python", "webservice.py" ]
+RUN /bin/bash -c 'echo This would generally be apt-get or other system configuration'
+ENV myCostumEnvVar="Das ist ein Test" \
+    otherEnvVar="Das ist auch ein Test""
